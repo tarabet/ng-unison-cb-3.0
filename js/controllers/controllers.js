@@ -1,12 +1,10 @@
 var appControllers = angular.module('appControllers', []);
 
-appControllers.controller('globalController', function($scope, $route, $routeParams, $location) {
-    $scope.$location = $location;
-    $scope.$route = $route;
-    $scope.$routeParms = $routeParams;
+appControllers.controller('globalController', ['$scope', '$state', function($scope, $state) {
+    $scope.$state = $state;
 
-    $scope.navigate = function(url) {
-        $location.path(url);
+    $scope.navigate = function(stateName) {
+        $state.go(stateName);
     };
 
     //Круговые переходы по нужным страницам при последовательном нажании на логотип вверху
@@ -21,7 +19,7 @@ appControllers.controller('globalController', function($scope, $route, $routePar
             $location.path('/');
         }
     };
-});
+}]);
 
 appControllers.controller('homepageCtrl', ['$scope',
     function ($scope) {

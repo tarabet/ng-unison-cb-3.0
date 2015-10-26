@@ -35,7 +35,9 @@
     <script type="text/javascript" src="js/site.js"></script>
 
     <script src="lib/angular/angular.min.js"></script>
-    <script src="lib/angular-route/angular-route.min.js"></script>
+    <!--<script src="lib/angular-route/angular-route.min.js"></script>-->
+    <script src="lib/ui-router/release/angular-ui-router.min.js"></script>
+
     <script src="js/ngapp.js"></script>
     <script src="js/controllers/controllers.js"></script>
     <script src="js/services/services.js"></script>
@@ -86,7 +88,7 @@
             </div>
             <div class="clearfix">
                 <div class="m-menu">
-                    <span></span><a ng-click="navigate('/productsandservices')">Продукты и услуги</a>
+                    <span></span><a ng-click="navigate('productsandservices')">Продукты и услуги</a>
                     <ul>
                         <li>
                             <!-- Popovich Create rout fo Credit product on products-credit-tmpl.html -->
@@ -165,7 +167,7 @@
         <!-- ///////////////////// BIG WHITE IS INCLUDED HERE ///////////////// -->
 
         <!-- ///////////////////// TEMPLATE IS INCLUDED HERE ///////////////// -->
-        <div ng-view></div>
+        <div ui-view></div>
         <!-- ///////////////////// TEMPLATE IS INCLUDED HERE ///////////////// -->
 
     </div>
